@@ -1,9 +1,7 @@
 ---
-interface Props {
-	title: string;
-}
+import Header from "../components/Header.astro"
+import Main from "../components/Main.astro"
 
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,11 +12,20 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+	rel="stylesheet">
+		<title></title>
 	</head>
-	<body>
-		<h1>Hello</h1>
-		<slot />
+	<body class="min-h-max bg-gradient-to-r font-roboto from-indigo-950 to-indigo-950 text-indigo-200">
+		<div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+			<div class="lg:flex lg:justify-between lg:gap-4">
+				<Header />
+				<Main />
+				<slot />
+			</div>
+		</div>
 	</body>
 </html>
 <style is:global>
